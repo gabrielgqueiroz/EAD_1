@@ -39,9 +39,7 @@ export class ListarComponent implements OnInit {
   }
 
   atualizarProd(): void {
-    console.log(this.produto);
     this.web.atualizarProduto(this.produto).subscribe(res => {
-      console.log(res);
       if (res.ok){
         this.carregarProdutos();
         alert(res.body.msg);
@@ -55,7 +53,6 @@ export class ListarComponent implements OnInit {
   changeVar(prod: Produto): void{
     this.prodToAtt = prod;
     this.produto = prod;
-    console.log(this.prodToAtt);
   }
 
 
