@@ -12,7 +12,23 @@
                 <td>{{p.price}}</td>
                 <td>{{p.description}}</td>
                 <td>{{p.title}}</td>
+                <td><button (click)="deletarProd(p)">deletar</button></td>
+                <td><button (click)="changeVar(p)">atualizar</button></td>
             </tr>
         </tbody>
     </table>
+    
+    <div >
+        <h3>Atualizar</h3>
+        <label>Título
+            <input [(ngModel)]="produto.title" type="text" value="{{prodToAtt !== undefined ? prodToAtt.title : ''}}" />
+        </label>
+        <label>Preço
+            <input [(ngModel)]="produto.price" value="{{prodToAtt !== undefined ? prodToAtt.price : ''}}" />
+        </label>
+        <label>Descrição
+            <textarea [(ngModel)]="produto.description" type="text" value="{{prodToAtt !== undefined ? prodToAtt.description : ''}}"></textarea>
+        </label>
+        <button (click)="atualizarProd()">Atualizar</button>
+    </div>
 </div>
